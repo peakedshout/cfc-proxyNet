@@ -96,7 +96,7 @@ func (rc *runCtx) delWork() {
 func (rc *runCtx) buildWindow() {
 	//window	-----------------------------------------------------------------------------------------
 	rc.ac.wd = widgets.NewQMainWindow(nil, 0)
-	rc.ac.wd.SetWindowTitle("cfc-proxy")
+	rc.ac.wd.SetWindowTitle(appName)
 	rc.ac.wd.SetMaximumWidth(300)
 	rc.ac.wd.SetMinimumWidth(300)
 
@@ -359,9 +359,9 @@ func (rc *runCtx) buildWindow() {
 	}
 
 	defaultDataFn := func() {
-		l112.SetText("sv2.peakedshout.top:9988")
-		l122.SetText("6a647c0bf889419c84e461486f83d776")
-		l132.SetText("9988")
+		l112.SetText("")
+		l122.SetText("")
+		l132.SetText("")
 
 		l152.SetCurrentIndex(loger.LogLevelWarn)
 		loger.SetLoggerLevel(loger.LogLevelWarn)
