@@ -1,0 +1,25 @@
+{
+  "ProxyServerHost": {
+    "ProxyServerAddr": "",
+    "LinkProxyKey": ""
+  },
+  "ProxyMethod": {
+    "Http": {
+      "Host": "",
+      "Port": 0
+    },
+    "Https": {
+      "Host": "",
+      "Port": 0
+    },
+    "Socks": {
+      "Host": "",
+      "Port": 0
+    }
+  },
+  "Setting": {
+    "ReLinkTime": "",
+    "LogLevel": 0,
+    "LogStack": false
+  }
+}

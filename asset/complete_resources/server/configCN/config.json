@@ -1,0 +1,31 @@
+{
+  "ProxyServerHost": {
+    "?ProxyServerAddr": "代理服务监听的端口，请确保客户端能够ping&&dial成功",
+    "ProxyServerAddr": "",
+    "?LinkProxyKey": "通信加密对称密钥，它应该是32位的bytes，它不应该是被公开的",
+    "LinkProxyKey": ""
+  },
+  "?ProxyMethod": "客户端的本地监听设置，服务端会忽略该设置",
+  "ProxyMethod": {
+    "Http": {
+      "Host": "",
+      "Port": 0
+    },
+    "Https": {
+      "Host": "",
+      "Port": 0
+    },
+    "Socks": {
+      "Host": "",
+      "Port": 0
+    }
+  },
+  "Setting": {
+    "?ReLinkTime": "服务重启间隔，只对服务端有效",
+    "ReLinkTime": "",
+    "?LogLevel": "日志级别",
+    "LogLevel": 0,
+    "?LogStack": "日志堆栈",
+    "LogStack": false
+  }
+}

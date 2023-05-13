@@ -1,0 +1,25 @@
+{
+  "ProxyServerHost": {
+    "ProxyServerAddr": ":9988",
+    "LinkProxyKey": "6a647c0bf889419c84e461486f83d776"
+  },
+  "ProxyMethod": {
+    "Http": {
+      "Host": "",
+      "Port": 0
+    },
+    "Https": {
+      "Host": "",
+      "Port": 0
+    },
+    "Socks": {
+      "Host": "",
+      "Port": 0
+    }
+  },
+  "Setting": {
+    "ReLinkTime": "5s",
+    "LogLevel": 0,
+    "LogStack": false
+  }
+}

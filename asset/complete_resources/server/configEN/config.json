@@ -1,0 +1,31 @@
+{
+  "ProxyServerHost": {
+    "?ProxyServerAddr": "Port monitored by the proxy service. Ensure that the client can ping&&dial successfully",
+    "ProxyServerAddr": "",
+    "?LinkProxyKey": "The communication encryption symmetric key, which should be 32-bit bytes, should not be exposed",
+    "LinkProxyKey": ""
+  },
+  "?ProxyMethod": "The server ignores the local listening setting on the client",
+  "ProxyMethod": {
+    "Http": {
+      "Host": "",
+      "Port": 0
+    },
+    "Https": {
+      "Host": "",
+      "Port": 0
+    },
+    "Socks": {
+      "Host": "",
+      "Port": 0
+    }
+  },
+  "Setting": {
+    "?ReLinkTime": "Service restart interval. This parameter is valid only on the server",
+    "ReLinkTime": "",
+    "?LogLevel": "Log level",
+    "LogLevel": 0,
+    "?LogStack": "Log stack",
+    "LogStack": false
+  }
+}
