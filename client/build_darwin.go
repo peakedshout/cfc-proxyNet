@@ -28,6 +28,3 @@ func run() error {
 	}
 	return nil
 }
-func del() error {
-	return nil
-}
