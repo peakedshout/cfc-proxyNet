@@ -56,7 +56,7 @@
 ***
 ## Features you want to support (later?)
 - [x] http/https
-- [ ] socks
+- [x] socks
 - [x] windows/macos client
 - [ ] Android client
 - [ ] Customize the proxy route

@@ -56,7 +56,7 @@
 ***
 ## 想支持的功能（后续完成？）
   - [x] http/https协议
-  - [ ] socks协议
+  - [x] socks协议
   - [x] windows/macos客户端
   - [ ] Android客户端
   - [ ] 自定义代理路线
