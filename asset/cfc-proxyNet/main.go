@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/peakedshout/go-CFC/loger"
-	"net"
 	"time"
 )
 
@@ -10,27 +9,19 @@ func main() {
 	runMain()
 }
 
-type runCtx struct {
-	pc   *proxyCtx
-	lc   *logCtx
-	ac   *appCtx
-	acfg *AppConfig
-
-	onceLn net.Listener
-
-	uuid   string
-	active bool
-}
-
 func runMain() {
-	rc := &runCtx{
-		pc:     nil,
-		lc:     nil,
-		ac:     nil,
-		acfg:   nil,
-		onceLn: nil,
-		uuid:   "",
-		active: false,
+	ctx := Ctx{
+		onceLn:    nil,
+		app:       nil,
+		wd:        nil,
+		ti:        nil,
+		logo:      nil,
+		serverCtx: nil,
+		active:    false,
+		uuid:      "",
+		acfg:      nil,
+		logCtx:    nil,
+		wc:        wCtx{},
 	}
 	defer func() {
 		err := recover()
@@ -39,5 +30,5 @@ func runMain() {
 			time.Sleep(3 * time.Second)
 		}
 	}()
-	rc.newAppCtx()
+	ctx.newApp()
 }

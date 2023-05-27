@@ -9,11 +9,11 @@ import (
 	"strings"
 )
 
-func (rc *runCtx) getBoxPath(fileName string) string {
-	return path.Join(rc.ac.app.ApplicationDirPath(), "./box/", fileName)
+func (ctx *Ctx) getBoxPath(fileName string) string {
+	return path.Join(ctx.app.ApplicationDirPath(), "./box/", fileName)
 }
 
-func (rc *runCtx) getUUID() (string, error) {
+func (ctx *Ctx) getUUID() (string, error) {
 	b, err := exec.Command("wmic", "csproduct", "get", "uuid").CombinedOutput()
 	if err != nil {
 		loger.SetLogDebug(errGetUUIDBad, err)

@@ -4,8 +4,9 @@ import (
 	"flag"
 	"github.com/peakedshout/cfc-proxyNet/config"
 	"github.com/peakedshout/go-CFC/loger"
-	"github.com/peakedshout/go-CFC/server"
 	"github.com/peakedshout/go-CFC/tool"
+	"github.com/peakedshout/go-socks/relay"
+	"github.com/peakedshout/go-socks/share"
 )
 
 func main() {
@@ -18,15 +19,27 @@ func main() {
 	loger.SetLoggerLevel(c.Setting.LogLevel)
 	loger.SetLoggerStack(c.Setting.LogStack)
 
-	sc := &server.Config{
-		RawKey:           c.ProxyServerHost.LinkProxyKey,
-		LnAddr:           c.ProxyServerHost.ProxyServerAddr,
-		SwitchVPNProxy:   true,
-		SwitchLinkClient: false,
+	sc := &relay.ServerConfig{
+		Addr:   c.ProxyServerHost.ProxyServerAddr,
+		RawKey: c.ProxyServerHost.LinkProxyKey,
+		CMDSwitch: share.SocksCMDSwitch{
+			SwitchCMDCONNECT:      true,
+			SwitchCMDBIND:         true,
+			SwitchCMDUDPASSOCIATE: true,
+		},
+		ConnTimeout: 0,
+		DialTimeout: 0,
+		BindTimeout: 0,
 	}
-
 	err := tool.ReRun(c.Setting.ReLinkTime, func() bool {
-		server.NewProxyServer2(sc).Wait()
+		rs, err := relay.NewServer(sc)
+		if err != nil {
+			loger.SetLogWarn(err)
+		}
+		err = rs.Wait()
+		if err != nil {
+			loger.SetLogWarn(err)
+		}
 		return true
 	})
 	if err != nil {
